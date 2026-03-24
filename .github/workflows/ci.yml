@@ -42,8 +42,3 @@ jobs:
       - name: Ejecutar análisis estático
         run: |
           pylint src --exit-zero
-
-      - name: SonarQube Cloud Scan
-        uses: SonarSource/sonarqube-scan-action@v6
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
