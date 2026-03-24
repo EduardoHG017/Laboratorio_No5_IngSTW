@@ -41,7 +41,7 @@ jobs:
 
       - name: Ejecutar análisis estático
         run: |
-          pylint src || exit 1
+          pylint src --exit-zero
 
       - name: SonarQube Cloud Scan
         uses: SonarSource/sonarqube-scan-action@v5

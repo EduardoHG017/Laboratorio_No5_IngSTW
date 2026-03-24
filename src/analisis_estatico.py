@@ -1,3 +1,7 @@
+"""Módulo de análisis estático de código Python.
+
+Detecta patrones de riesgo como SQL injection y bare except.
+"""
 import ast
 import re
 
@@ -15,10 +19,13 @@ for archivo in archivos:
         if isinstance(node, ast.FunctionDef):
             parametros = len(node.args.args)
             if parametros > 6:
-                print(f"[MEDIA] Long Parameter List en función {node.name} ({parametros} parámetros)")
+                msg = (f"[MEDIA] Long Parameter List en función "
+                       f"{node.name} ({parametros} parámetros)")
+                print(msg)
 
     if re.search(r"SELECT \* FROM .* \+ ", codigo):
-        print("[ALTA] Posible SQL Injection detectado")
+        msg = "[ALTA] Posible SQL Injection detectado"
+        print(msg)
 
     if re.search(r"except:", codigo):
         print("[MEDIA] Uso de bare except detectado")
