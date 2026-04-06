@@ -39,12 +39,12 @@ def crear_reserva(cliente, fecha, cantidad):
     return None
 
 
-def cancelar_reserva(reserva_id):
+def cancelar_reserva(_reserva_id):
     """Simula la cancelación de una reserva.
-    
+
     Args:
-        reserva_id: ID de la reserva a cancelar
-        
+        _reserva_id: ID de la reserva a cancelar (no usado en simulación)
+
     Returns:
         True si la cancelación fue exitosa
     """

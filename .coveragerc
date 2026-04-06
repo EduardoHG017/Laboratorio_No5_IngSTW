@@ -1,0 +1,5 @@
+[run]
+omit = src/analisis_estatico.py
+
+[report]
+show_missing = True
